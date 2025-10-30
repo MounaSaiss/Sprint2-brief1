@@ -14,7 +14,7 @@ body {
 
 .application {
     background-color: rgba(178, 178, 243, 0.338);
-    width: 90%;
+    width: 80%;
     max-width: 500px;
     margin: 100px auto  100px;
     border-radius: 20px;
@@ -52,11 +52,11 @@ body {
     transition: 0.3s;
 }
 
-.btn:hover {
+/* .btn:hover {
     background-color: #030c3a;
     color: #fff;
     transform: scale(1.05);
-}
+} */
 
 #next-button {
     background: #030c3a;
@@ -76,3 +76,9 @@ body {
     transform: scale(0.9);
 }
 
+.correct{
+    background: green;
+}
+.incorrect{
+    background: red;
+}
