@@ -16,7 +16,7 @@ body {
     background-color: rgba(178, 178, 243, 0.338);
     width: 80%;
     max-width: 500px;
-    margin: 100px auto  100px;
+    margin: 100px auto 100px;
     border-radius: 20px;
     padding: 30px;
 }
@@ -76,9 +76,33 @@ body {
     transform: scale(0.9);
 }
 
-.correct{
+.correct {
     background: green;
 }
-.incorrect{
+
+.incorrect {
     background: red;
+}
+
+#précédant-button {
+    background: #06aef0;
+    color: whitesmoke;
+    font-weight: 600;
+    width: 100px;
+    border: 0;
+    padding: 10px;
+    margin: 25px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.v-hidden {
+    visibility: hidden;
 }
