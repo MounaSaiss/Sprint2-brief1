@@ -49,6 +49,7 @@ const questions = [
         ],
         selectedAnswers: null,
     },
+
 ];
 
 const questionElement = document.getElementById("question");
@@ -113,8 +114,10 @@ function showQuestion() {
     }
 
     if (currentQuestionIndex == questions.length - 1) {
-        nextButton.classList.add('v-hidden');
-    } else {
+        nextButton.innerHTML = "Términer";
+        nextButton.addEventListener("click", showScore);
+    } 
+    else {
         nextButton.classList.remove('v-hidden');
     }
 }
@@ -128,16 +131,33 @@ function selectAnswer(event) {
     const indexQ = selectedBtn.dataset.indexQuestion;
     const indexA = selectedBtn.dataset.indexAnswer;
 
+
     const question = questions[+indexQ];
     question.selectedAnswers = indexA;
 
     if (question.answers[+indexA].correction == true) {
         selectedBtn.classList.add("correct");
+        score++;
+        // console.log(score)
     }
     else {
         selectedBtn.classList.add("incorrect");
     }
+    Array.from(answerButton.children).forEach(button => {
+        if (button.dataset.correct == "true") {
+            button.classList.add(correct);
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
 }
 
+function showScore(){
+    questionElement.innerHTML= `Your Scored ${score} out of ${questions.length}!`;
+    nextButton.innerHTML="Play Again";
+    nextButton.style.display="block";
+    // nextButton.addEventListener("click",startQuiz)
+    // nextButton.innerHTML="Next"
+}
 
 startQuiz();
